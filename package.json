@@ -1,0 +1,37 @@
+{
+  "name": "uds-flasher",
+  "version": "0.0.1",
+  "description": "UDS over ISO-TP over CAN over OBD-II flasher",
+  "main": "index.js",
+  "scripts": {
+    "start": "stdbuf -i0 -o0 -e0 isotprecv $npm_package_config_interface_name -l -s $npm_package_config_source_id -d $npm_package_config_destination_id -p AA:AA | node index.js"
+  },
+  "config": {
+    "source_id": "7e8",
+    "destination_id": "7e0",
+    "interface_name": "can0",
+    "address": "84002000",
+    "size": "0000fe00"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandonros/uds-flasher.git"
+  },
+  "keywords": [
+    "can",
+    "obd",
+    "isotp",
+    "uds",
+    "log"
+  ],
+  "author": "Brandon Ros",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brandonros/uds-flasher/issues"
+  },
+  "homepage": "https://github.com/brandonros/uds-flasher#readme",
+  "dependencies": {
+    "execa": "^2.0.3",
+    "split": "^1.0.1"
+  }
+}
